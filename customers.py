@@ -42,11 +42,15 @@ referral_sources = random.choices(
 # Generate random genders
 genders = random.choices(["Male", "Female"], k=num_records)
 
+# Generate random ages
+ages = [random.randint(18, 65) for _ in range(num_records)]
+
 # Create the DataFrame
 customers_df = pd.DataFrame({
     "customer_id": customer_ids,
     "name": names,
     "gender": genders,
+    "age": ages,
     "city": cities,
     "signup_date": signup_dates,
     "referral_source": referral_sources
